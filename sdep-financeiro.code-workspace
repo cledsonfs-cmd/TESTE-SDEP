@@ -1,0 +1,12 @@
+{
+	"folders": [
+		{
+			"name": "financeiro-api",
+			"path": "../../../../../mnt/66C174226EBFF4DE/Projetos/0.TESTES/SOP (Superintendência de Obras Públicas do Estado do Ceará)./SOPFinanceiro/financeiro-api"
+		}
+	],
+	"settings": {
+		"java.compile.nullAnalysis.mode": "automatic",
+		"java.configuration.updateBuildConfiguration": "automatic"
+	}
+}
