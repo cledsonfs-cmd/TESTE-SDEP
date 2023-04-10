@@ -41,6 +41,11 @@ public class DespesaService {
 
         for (DespesaDTO despesaDTO : objetosDTO) {
             despesaDTO.setNumEmpenhos(empenhoService.getPorDespesa(despesaDTO.getIdDespesa()).size());
+            for (Despesa despesatemp : _objeto) {
+                if(despesaDTO.getIdDespesa() == despesatemp.getIdDespesa()){
+                    despesaDTO.setStatus(MaquinaStatus.AnalisarDespesa(despesatemp));
+                }
+            }
         }
 
         return objetosDTO;

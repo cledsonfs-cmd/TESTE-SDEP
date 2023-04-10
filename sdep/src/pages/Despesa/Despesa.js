@@ -50,7 +50,7 @@ const Despesa = () => {
         <table  class="table table-sm">
           <thead>
             <tr>
-              <th>Ação</th>
+              <th> Ação </th>
               <th>#</th>
               <th>Protocolo</th>
               <th>Tipo Despesa</th>
@@ -59,6 +59,7 @@ const Despesa = () => {
               <th>Credor</th>
               <th>Descrição</th>
               <th>Valor</th>
+              <th>Status</th>
               <th>Empenhos</th>
             </tr>
           </thead>
@@ -81,6 +82,7 @@ const Despesa = () => {
                     <td>{despesa.credorDespesa}</td>
                     <td>{despesa.descricaoDespesa}</td>                    
                     <td align='right'>{despesa.valorDespesa.toLocaleString('pt-br', {minimumFractionDigits: 2})}</td>
+                    <td align='center'>[{despesa.status}]</td>
                     <td align='center'>
                     <span onClick={() => handleNavegar(`../empenho/${despesa.idDespesa}`)}><BsBag size="25" title='Empenhos'/></span>
                     </td>

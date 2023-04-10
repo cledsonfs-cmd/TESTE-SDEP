@@ -26,5 +26,6 @@ public class DespesaDTO {
     private String descricaoDespesa;
     private float valorDespesa;
     private int numEmpenhos;
+    private String status;
 
 }

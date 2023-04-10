@@ -8,26 +8,27 @@ public class MaquinaStatus {
 
         //Despesa Registrada, mas nenhum empenho associado.
         if(_despesa.getEmpenhos().size()==0){
-            return "Aguardando Empenho";
+            return "AGUARDANDO_EMPENHO";
         }
 
         //Despesa onde a soma dos valores empenhados é inferior ao valor da despesa        
-        if(_despesa.getValorDespesa()<_despesa.TotalEmpenhos()){
-            return "Parcialmente Empenhada";
-        }else if(_despesa.getValorDespesa()==_despesa.TotalEmpenhos()){
+        if(Float.compare(_despesa.getValorDespesa(),_despesa.TotalEmpenhos()) > 0){            
+            return "PARCIALMENTE_EMPENHADA";
+        }else if(Float.compare(_despesa.getValorDespesa(),_despesa.TotalEmpenhos())==0){
             //Despesa onde a soma dos valores empenhados é igual ao valor da despesa. Mas não possui registro de pagamento.
             if(_despesa.TotalPagamento()==0){
-                return "Aguardando Pagamento";
+                
+                return "AGUARDANDO PAGAMENTO";
             }
 
             //Despesa onde a soma dos valores pagos é inferior ao valor da despesa
-            if(_despesa.TotalPagamento()<_despesa.getValorDespesa()){
-                return "Parcialmente Paga ";
+            if(Float.compare(_despesa.TotalPagamento(),_despesa.getValorDespesa())<0){
+                return "PARCIALMENTE_PAGA";
             }
 
             //Despesa onde a soma dos valores pagos ao valor da despesa
-            if(_despesa.TotalPagamento()==_despesa.getValorDespesa()){
-                return "Paga ";
+            if(Float.compare(_despesa.TotalPagamento(),_despesa.getValorDespesa()) == 0){
+                return "PAGA";
             }
         }
         
